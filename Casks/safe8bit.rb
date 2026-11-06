@@ -7,7 +7,7 @@ cask "safe8bit" do
   desc "Secrets vault for developers, with CLI, git guard and AI agent shield"
   homepage "https://safe8bit.com/"
 
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "Safe8bit.app"
   binary "#{appdir}/Safe8bit.app/Contents/Helpers/safe8bit"
