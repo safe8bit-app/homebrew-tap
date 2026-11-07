@@ -13,6 +13,13 @@ cask "safe8bit" do
   binary "#{appdir}/Safe8bit.app/Contents/Helpers/safe8bit"
   binary "#{appdir}/Safe8bit.app/Contents/Helpers/safe8bit", target: "safebit"
 
+  # A new version's SSH agent helper only starts once the app registers it again. Run the app
+  # once in the background to do that: it shows no window and quits by itself (0.1.5 or later).
+  postflight do
+    system_command "/usr/bin/open",
+                   args: ["-g", "-j", "-a", "#{appdir}/Safe8bit.app", "--args", "--refresh-ssh-agent"]
+  end
+
   # No zap stanza on purpose: the app's data is the encrypted vault, and uninstalling must never
   # delete it.
 end
