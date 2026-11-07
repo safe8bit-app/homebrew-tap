@@ -1,8 +1,8 @@
 # Safe8bit for Homebrew
 
 ```bash
-brew trust chingling123/tap
-brew install --cask chingling123/tap/safe8bit
+brew trust safe8bit-app/tap
+brew install --cask safe8bit-app/tap/safe8bit
 ```
 
 Homebrew asks you to trust a third-party tap once before installing from it.
