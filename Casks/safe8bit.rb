@@ -15,6 +15,8 @@ cask "safe8bit" do
 
   # A new version's SSH agent helper only starts once the app registers it again. Run the app
   # once in the background to do that: it shows no window and quits by itself (0.1.5 or later).
+  # Plain `postflight` on purpose: Homebrew 7 calls it deprecated, but `postflight_steps` runs in
+  # a sandbox where neither `open` nor the app itself can register the agent with launchd.
   postflight do
     system_command "/usr/bin/open",
                    args: ["-g", "-j", "-a", "#{appdir}/Safe8bit.app", "--args", "--refresh-ssh-agent"]
