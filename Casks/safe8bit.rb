@@ -1,6 +1,6 @@
 cask "safe8bit" do
-  version "0.1.18"
-  sha256 "ad9583ba84cc3eacfdba61f0101dc7205df5583989bd1354990ed5776d713204"
+  version "0.1.19"
+  sha256 "c0929026de51c4e061acbc4ef078c03714293aefb93cf8b3b9daf4f0ae112bac"
 
   url "https://github.com/safe8bit-app/homebrew-tap/releases/download/v#{version}/Safe8bit-#{version}.zip"
   name "Safe8bit"
